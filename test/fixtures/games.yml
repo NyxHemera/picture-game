@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text_last: false
+  draw_urls: MyString
+  text_list: MyString
+  finished: false
+  numRounds: 1
+
+two:
+  text_last: false
+  draw_urls: MyString
+  text_list: MyString
+  finished: false
+  numRounds: 1
