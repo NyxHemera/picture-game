@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         sign_in @user
-        format.html { redirect_to root_path, notice: 'Welcome!' }
+        format.html { redirect_to users_path, notice: 'Welcome!' }
         #format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -75,6 +75,7 @@ class UsersController < ApplicationController
         :first_name,
         :last_name,
         :email,
+        :photo_url,
         :password,
         :password_confirmation)
     end

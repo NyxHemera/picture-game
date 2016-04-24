@@ -1,0 +1,204 @@
+* {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+.break {
+  margin-top: 20px;
+}
+.btn {
+  padding: 1px 10px 1px 10px;
+  color: #fafafa;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa;
+  border-radius: 5px;
+  outline: none;
+}
+.btn:not(.btn-ind) {
+  background-color: #aaa;
+}
+.btn:not(.disabled):not(.btn-ind):hover {
+  background-color: #919191;
+}
+.btn:not(.disabled):not(.btn-ind):active {
+  color: #fafafa;
+  background-color: #848484;
+}
+.btn-clear {
+  padding: 1px 10px 1px 10px;
+  color: #aaa;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa;
+  border-radius: 5px;
+  outline: none;
+}
+.btn-clear:not(.btn-ind) {
+  background-color: transparent;
+}
+.btn-clear:not(.disabled):not(.btn-ind):hover {
+  color: #fafafa;
+  background-color: #919191;
+}
+.btn-clear:not(.disabled):not(.btn-ind):active {
+  color: #fafafa;
+  background-color: #848484;
+}
+.btn-create {
+  border-color: #4bc074;
+}
+.btn-create.btn-clear {
+  color: #4bc074;
+}
+.btn-create:not(.btn-ind):not(.btn-clear) {
+  background-color: #4bc074;
+}
+.btn-create:not(.disabled):not(.btn-ind):hover {
+  color: #fafafa;
+  background-color: #38a05c;
+}
+.btn-create:not(.disabled):not(.btn-ind):active {
+  color: #fafafa;
+  background-color: #318d52;
+}
+.btn-submit {
+  border-color: #4587b9;
+}
+.btn-submit.btn-clear {
+  color: #4587b9;
+}
+.btn-submit:not(.btn-ind):not(.btn-clear) {
+  background-color: #4587b9;
+}
+.btn-submit:not(.disabled):not(.btn-ind):hover {
+  color: #fafafa;
+  background-color: #376c94;
+}
+.btn-submit:not(.disabled):not(.btn-ind):active {
+  color: #fafafa;
+  background-color: #305e81;
+}
+.btn-destroy {
+  border-color: #b34a41;
+}
+.btn-destroy.btn-clear {
+  color: #b34a41;
+}
+.btn-destroy:not(.btn-ind):not(.btn-clear) {
+  background-color: #b34a41;
+}
+.btn-destroy:not(.disabled):not(.btn-ind):hover {
+  color: #fafafa;
+  background-color: #8e3b33;
+}
+.btn-destroy:not(.disabled):not(.btn-ind):active {
+  color: #fafafa;
+  background-color: #7b332d;
+}
+.btn-warn {
+  border-color: #daca6e;
+}
+.btn-warn.btn-clear {
+  color: #daca6e;
+}
+.btn-warn:not(.btn-ind):not(.btn-clear) {
+  background-color: #daca6e;
+}
+.btn-warn:not(.disabled):not(.btn-ind):hover {
+  color: #fafafa;
+  background-color: #d0bb45;
+}
+.btn-warn:not(.disabled):not(.btn-ind):active {
+  color: #fafafa;
+  background-color: #c8b233;
+}
+.btn-ind {
+  color: #2a2a2a;
+  background-color: transparent;
+}
+btn-group {
+  font-size: 0;
+}
+btn-group > * {
+  margin: 0;
+}
+btn-group > .btn:not(:first-child):not(:last-child) {
+  border-right-style: none;
+  border-left-style: none;
+  border-radius: 0;
+}
+btn-group > .btn:first-child {
+  border-right-style: none;
+  border-radius: 5px 0 0 5px;
+}
+btn-group > .btn:last-child {
+  border-left-style: none;
+  border-radius: 0 5px 5px 0;
+}
+btn-group > .btn-clear:not(:first-child):not(:last-child) {
+  border-right-style: none;
+  border-left-style: none;
+  border-radius: 0;
+}
+btn-group > .btn-clear:first-child {
+  border-right-style: none;
+  border-radius: 5px 0 0 5px;
+}
+btn-group > .btn-clear:last-child {
+  border-left-style: none;
+  border-radius: 0 5px 5px 0;
+}
+.btn-group {
+  font-size: 0;
+}
+.btn-group > * {
+  margin: 0;
+}
+.btn-group > .btn:not(:first-child):not(:last-child) {
+  border-right-style: none;
+  border-left-style: none;
+  border-radius: 0;
+}
+.btn-group > .btn:first-child {
+  border-right-style: none;
+  border-radius: 5px 0 0 5px;
+}
+.btn-group > .btn:last-child {
+  border-left-style: none;
+  border-radius: 0 5px 5px 0;
+}
+.btn-group > .btn-clear:not(:first-child):not(:last-child) {
+  border-right-style: none;
+  border-left-style: none;
+  border-radius: 0;
+}
+.btn-group > .btn-clear:first-child {
+  border-right-style: none;
+  border-radius: 5px 0 0 5px;
+}
+.btn-group > .btn-clear:last-child {
+  border-left-style: none;
+  border-radius: 0 5px 5px 0;
+}
+.dropdown {
+  position: relative;
+  transition: all .25s ease;
+}
+.dropdown > .dropdown-title {
+  margin: 0;
+  padding: 0;
+}
+.dropdown:hover .dropdown-box {
+  height: initial;
+  visibility: visible;
+}
+.dropdown-box {
+  border: solid 1px black;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+.shadows {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
+}

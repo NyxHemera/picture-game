@@ -1,0 +1,67 @@
+.user-li-wrap {
+  position: relative;
+  box-sizing: border-box;
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.user-li-wrap img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 140px;
+}
+.user-li-wrap h4,
+.user-li-wrap h5 {
+  position: relative;
+  top: 5px;
+  left: 150px;
+  margin: 0;
+  padding: 0;
+}
+.user-li-wrap h4 {
+  font-size: 25px;
+}
+.user-li-wrap h5 {
+  font-size: 20px;
+}
+.user-li-wrap button {
+  position: absolute;
+  font-weight: bold;
+  right: 5px;
+  bottom: 5px;
+}
+.game-li-wrap {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 5px;
+  border: solid black 1px;
+  justify-content: space-between;
+}
+.game-li-wrap div {
+  position: relative;
+}
+.game-li-wrap h4,
+.game-li-wrap h5 {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+.game-li-wrap div > h4 {
+  text-align: right;
+}
+.game-li-wrap div > h5:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.game-li-wrap button {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
