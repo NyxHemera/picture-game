@@ -1,9 +1,9 @@
 <%= form_for @game do |f| %>
     <label class="" for="game_story">Story: </label>
     <textarea class="" type="text" value="" name="game[story]" id="game_story" ></textarea>
-    <label class="" for="game_num_rounds">Total Turns: </label>
 
     <% if @game.stories.length == 0 %>
+    	<label class="" for="game_num_rounds">Total Turns: </label>
     	<input class="" type="number" value="4" name="game[num_rounds]" id="game_num_rounds" min="4" max="10" />
     <% end %>
     

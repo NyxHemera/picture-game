@@ -8,7 +8,5 @@
 	<br>
 	<h5>Games Completed: <%= user.games_completed %></h5>
 	<br>
-	<button class="btn-clear btn-submit shadows" style="text-decoration: none;">
-		<%= link_to 'View Profile', user_path(user) %>
-	</button>
+	<%= link_to 'View Profile', user_path(user), class: 'btn-clear btn-submit shadows' %>
 </div>

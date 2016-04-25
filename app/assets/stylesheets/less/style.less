@@ -37,16 +37,14 @@
 	h5 {
 		font-size: 20px;
 	}
-	button {
+	> a {
+		text-decoration: none;
+		color: inherit;
 		position: absolute;
 		font-weight: bold;
 		right: 5px;
 		bottom: 5px;
 		font-size: 18px;
-	}
-	a {
-		text-decoration: none;
-		color: inherit;
 	}
 }
 
@@ -62,7 +60,7 @@
 	justify-content: space-between;
 	margin-bottom: 20px;
 	border-radius: 2px;
-	div {
+	> div {
 		position: relative;
 	}
 	h4,
@@ -71,24 +69,22 @@
 		margin: 0;
 		padding: 0;
 	}
-	div > h4 {
+	> div > h4 {
 		text-align: right;
 	}
-	div > h5:last-child {
+	> div > h5:last-child {
 		position: absolute;
 		bottom: 0;
 		left: 0;
 	}
-	button {
+	> a {
+		text-decoration: none;
+		color: inherit;
 		position: absolute;
 		font-weight: bold;
 		right: 5px;
 		bottom: 5px;
 		font-size: 18px;
-	}
-	a {
-		text-decoration: none;
-		color: inherit;
 	}
 }
 
@@ -117,6 +113,10 @@
 	transition: ease 500ms;
 	> li {
 		display: inline-block;
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 	}
 }
 

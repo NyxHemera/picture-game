@@ -6,6 +6,7 @@
 		<ul class="tooltiptext">
 			<% game.users.each do |user| %>
 				<li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></li>
+				<br>
 			<% end %>
 		</ul>
 		</h5>
@@ -17,11 +18,9 @@
 			<h4>Turns Left: <%= game.num_rounds - (game.stories.length + game.draw_urls.length) %></h4>
 		<% end %>
 	</div>
-	<button class="btn-clear btn-submit shadows" style="text-decoration: none;">
-		<% if game.finished %>
-			<%= link_to 'View', game_path(game) %>
-		<% else %>
-			<%= link_to 'Play', edit_game_path(game) %>
-		<% end %>
-	</button>
+	<% if game.finished %>
+		<%= link_to 'View', game_path(game), class: 'btn-clear btn-submit shadows' %>
+	<% else %>
+		<%= link_to 'Play', edit_game_path(game), class: 'btn-clear btn-submit shadows' %>
+	<% end %>
 </div>
