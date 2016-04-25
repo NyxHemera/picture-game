@@ -1,11 +1,4 @@
-<div>
-	<%= link_to new_user_path, class: '' do %>
-		New User
-	<% end %>
-	<h1>Listing users</h1>
-</div>
-
-<div>
+<div class="index">
 	<% @users.each do |user| %>
 		<%= render "userlistitem", :user => user %>
 	<% end %>

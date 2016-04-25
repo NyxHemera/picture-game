@@ -1,8 +1,14 @@
 <div class="user-li-wrap shadows">
-	<img src=<%= user.photo_url %>>
+	<img class="shadows" src=<%= user.photo_url %>>
 	<h4><%= user.first_name %> <%= user.last_name %></h4>
+	<br>
 	<h5>Games Created: <%= user.games_created %></h5>
+	<br>
 	<h5>Games Playing: <%= user.games.length - user.games_completed %></h5>
+	<br>
 	<h5>Games Completed: <%= user.games_completed %></h5>
-	<button class="btn-clear btn-submit shadows">View Profile</button>
+	<br>
+	<button class="btn-clear btn-submit shadows" style="text-decoration: none;">
+		<%= link_to 'View Profile', user_path(user) %>
+	</button>
 </div>

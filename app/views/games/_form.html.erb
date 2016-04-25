@@ -1,0 +1,62 @@
+<%= form_for(@user, html: { class: "form-horizontal", role: "form" }) do |f| %>
+	<% if @user.errors.any? %>
+		<div class="alert alert-danger alert-dismissable" role="alert">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+
+			<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="">
+    <%= f.label :login_id, class: "" %>
+    <div class="">
+      <%= f.text_field :login_id, class: "" %>
+    </div>
+  </div>
+	<div class="">
+		<%= f.label :first_name, class: "" %>
+		<div class="">
+			<%= f.text_field :first_name, class: "" %>
+		</div>
+	</div>
+	<div class="">
+		<%= f.label :last_name, class: "" %>
+		<div class="">
+			<%= f.text_field :last_name, class: "" %>
+		</div>
+	</div>
+	<div class="">
+		<%= f.label :email, class: "" %>
+		<div class="">
+			<%= f.text_field :email, class: "" %>
+		</div>
+	</div>
+	<div class="">
+		<%= f.label :photo_url, class: "" %>
+		<div class="">
+			<%= f.text_field :photo_url, class: "" %>
+		</div>
+	</div>
+	<div class="">
+		<%= f.label :password, class: "" %>
+		<div class="">
+			<%= f.password_field :password, class: "" %>
+		</div>
+	</div>
+	<div class="">
+		<%= f.label :password_confirmation, class: "" %>
+		<div class="">
+			<%= f.password_field :password_confirmation, class: "" %>
+		</div>
+	</div>
+	<div class="">
+		<div class="">
+			<%= f.submit class: "" %>
+		</div>
+	</div>
+<% end %>

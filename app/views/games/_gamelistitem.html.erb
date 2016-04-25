@@ -1,0 +1,21 @@
+<div class="game-li-wrap shadows">
+	<h5>Creator: <%= game.users[0].first_name %> <%= game.users[0].last_name %></h4>
+	<br>
+	<h5 class="tooltip">
+	Players:
+	<ul class="tooltiptext">
+		<% game.users.each do |player| %>
+			<li><%= player.first_name %> <%= player.last_name %></li>
+		<% end %>
+	</ul>
+	</h5>
+	<br>
+	<h5>Next Move: <%= game.text_last ? "Drawing" : "Text" %></h5>
+	<br>
+	<h5>Round: </h5>
+	<br>
+	<h5>Rounds Left: </h5>
+	<button class="btn-clear btn-submit shadows" style="text-decoration: none;">
+		<%= link_to 'Play', game_path(game) %>
+	</button>
+</div>

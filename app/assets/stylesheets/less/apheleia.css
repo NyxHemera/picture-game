@@ -12,6 +12,7 @@
   border-color: #aaa;
   border-radius: 5px;
   outline: none;
+  transition: background-color ease 250ms, color ease 250ms;
 }
 .btn:not(.btn-ind) {
   background-color: #aaa;
@@ -23,6 +24,10 @@
   color: #fafafa;
   background-color: #848484;
 }
+.btn a {
+  text-decoration: none;
+  color: inherit;
+}
 .btn-clear {
   padding: 1px 10px 1px 10px;
   color: #aaa;
@@ -31,6 +36,7 @@
   border-color: #aaa;
   border-radius: 5px;
   outline: none;
+  transition: background-color ease 250ms, color ease 250ms;
 }
 .btn-clear:not(.btn-ind) {
   background-color: transparent;
@@ -42,6 +48,10 @@
 .btn-clear:not(.disabled):not(.btn-ind):active {
   color: #fafafa;
   background-color: #848484;
+}
+.btn-clear a {
+  text-decoration: none;
+  color: inherit;
 }
 .btn-create {
   border-color: #4bc074;
@@ -180,24 +190,67 @@ btn-group > .btn-clear:last-child {
   border-radius: 0 5px 5px 0;
 }
 .dropdown {
-  position: relative;
-  transition: all .25s ease;
-}
-.dropdown > .dropdown-title {
-  margin: 0;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
-.dropdown:hover .dropdown-box {
-  height: initial;
+.dropdown a {
+  text-decoration: none;
+  color: black;
+}
+.dropdown li ul {
+  opacity: 0;
+  visibility: hidden;
+  transition: ease 200ms;
+}
+.dropdown > li a:hover + ul {
+  opacity: 1;
   visibility: visible;
 }
-.dropdown-box {
-  border: solid 1px black;
-  height: 0;
+.dropdown > li ul:hover {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltiptext {
+  white-space: nowrap;
   visibility: hidden;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  margin: 0;
+  padding: 3px;
+  border-radius: 3px;
   position: absolute;
+  z-index: 1;
+  transition: ease 500ms;
+}
+.tooltiptext > li {
+  display: inline-block;
+}
+.tt-right {
+  left: 105%;
+  top: -3px;
+}
+.tt-left {
+  right: 105%;
+  top: -3px;
+}
+.tt-top {
+  left: -3px;
+  bottom: 105%;
 }
 .shadows {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.75);
