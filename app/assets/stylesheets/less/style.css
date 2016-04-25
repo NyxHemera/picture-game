@@ -56,6 +56,8 @@
   padding: 5px;
   border: solid black 1px;
   justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 2px;
 }
 .game-li-wrap div {
   position: relative;
@@ -76,8 +78,10 @@
 }
 .game-li-wrap button {
   position: absolute;
+  font-weight: bold;
   right: 5px;
   bottom: 5px;
+  font-size: 18px;
 }
 .game-li-wrap a {
   text-decoration: none;

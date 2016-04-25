@@ -2,4 +2,9 @@
 	<% @games.each do |game| %>
 		<%= render "gamelistitem", :game => game %>
 	<% end %>
+	<% if @games.length == 0 %>
+		<h3>There are no games in progress!</h3>
+		<h3>You should start one!</h3>
+		<button class="btn-clear btn-create"><%= link_to "New Game", new_game_path %></button>
+	<% end %>
 </div>

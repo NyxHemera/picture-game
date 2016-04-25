@@ -6,10 +6,11 @@ class GamesController < ApplicationController
   end
 
   def show
-    respond_to do |format|
-      format.html
-      format.json { render json: @game }
-    end
+    @game = Game.find(params[:id])
+#    respond_to do |format|
+#      format.html
+#      format.json { render json: @game }
+#    end
   end
 
   def new
@@ -17,12 +18,15 @@ class GamesController < ApplicationController
   end
 
   def edit
+    @game = Game.find(params[:id])
   end
 
   def create
     @game = Game.new(game_params)
     @game.users.push(current_user)
-    @game.stories.push(params[:game][:stories])
+    @game.stories.push(params[:game][:story])
+    @game.num_rounds = params[:game][:num_rounds]
+    @game.text_last = !@game.text_last
     respond_to do |format|
       if @game.save
         format.html { redirect_to games_path, notice: 'Welcome!' }
@@ -35,9 +39,21 @@ class GamesController < ApplicationController
   end
 
   def update
+    @game = Game.find(params[:id])
+    @game.users.push(current_user)
+    if @game.text_last
+      @game.draw_urls.push(params[:game][:image])
+    else
+      @game.stories.push(params[:game][:story])
+    end
+    @game.text_last = !@game.text_last
+
+    if @game.num_rounds <= (@game.stories.length + @game.draw_urls.length)
+      @game.finished = true
+    end
     respond_to do |format|
       if @game.update(game_params)
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to games_path, notice: 'Game was successfully updated.' }
         #format.json { render :show, status: :ok, location: @game }
       else
         format.html { render :edit }

@@ -1,0 +1,4 @@
+<%= form_for @game do |f| %>
+    <input name="game[image]" type="hidden" id='game_image' value="Random text goes here." />
+		<input type="submit" name="commit" value="Update Game" onclick="setImageVal()" class="btn-clear btn-create" style="margin: 0 auto; display: block" />
+<% end %>

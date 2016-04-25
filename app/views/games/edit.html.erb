@@ -1,8 +1,19 @@
-<div class="page-header">
-  <%= link_to @user, class: 'btn-clear' do %>
-    Show
-  <% end %>
-  <h1>Editing user</h1>
-</div>
+<div class="index">
+	<% if @game.finished %>
+		<% redirect_to game_path(@game) %>
+	<% end %>
 
-<%= render 'form' %>
+	<% if @game.text_last %>
+		<h3><%= @game.stories.last %></h3>
+		<div id="canvas-wrap"></div>
+    <script>
+			$(document).ready(function() { 
+				CA = new CanvasActual();
+			});
+		</script>
+		<%= render 'imggameform' %>
+	<% else %>
+		<img src=<%= @game.draw_urls.last %>>
+		<%= render 'textgameform' %>
+	<% end %>
+</div>

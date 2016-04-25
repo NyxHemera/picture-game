@@ -1,18 +1,8 @@
-<div class="page-header">
-  <%= link_to edit_user_path(@user), class: 'btn' do %>
-    Edit
+<div class="index">
+  <% for i in 0..@game.stories.length %>
+    <h3><%= @game.stories[i] %></h3>
+    <% if i < @game.draw_urls.length %>
+      <img src=<%= @game.draw_urls[i] %>>
+    <% end %>
   <% end %>
-  <h1>Show user</h1>
 </div>
-
-<dl class="">
-  <dt>First name:</dt>
-  <dd><%= @user.first_name %></dd>
-
-  <dt>Last name:</dt>
-  <dd><%= @user.last_name %></dd>
-
-  <dt>Email:</dt>
-  <dd><%= @user.email %></dd>
-
-</dl>
