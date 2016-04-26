@@ -12,6 +12,7 @@
   height: 150px;
   margin-bottom: 20px;
   border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .user-li-wrap img {
   position: absolute;
@@ -52,7 +53,7 @@
   height: 100px;
   margin: 0 auto;
   padding: 5px;
-  border: solid black 1px;
+  background-color: rgba(255, 255, 255, 0.9);
   justify-content: space-between;
   margin-bottom: 20px;
   border-radius: 2px;
@@ -82,6 +83,97 @@
   right: 5px;
   bottom: 5px;
   font-size: 18px;
+}
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 2;
+  /* non-critical apperance styles */
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+label[for="nav-trigger"] span,
+label[for="nav-trigger"] span:before,
+label[for="nav-trigger"] span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 500ms ease-in-out;
+}
+label[for="nav-trigger"] span {
+  top: 15px;
+}
+label[for="nav-trigger"] span:before {
+  top: -10px;
+}
+label[for="nav-trigger"] span:after {
+  bottom: -10px;
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span {
+  background-color: transparent;
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span:before,
+.nav-trigger:checked ~ label[for="nav-trigger"] span:after {
+  top: 0;
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span:before {
+  transform: rotate(45deg);
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span:after {
+  transform: rotate(-45deg);
+}
+.nav-trigger:checked ~ .dropdownnav {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdownnav {
+  position: relative;
+  left: 15px;
+  display: inline-block;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease 200ms;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.dropdownnav a {
+  text-decoration: none;
+  color: black;
+}
+.dropdownnav li {
+  margin: 5px 0;
+  text-align: center;
+}
+.dropdownnav li:not(:first-child):not(:last-child) {
+  border-top: solid rgba(0, 0, 0, 0.75) 1px;
+}
+.dropdownnav li:last-child {
+  margin-top: 10px;
+}
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 .tooltip {
   position: relative;

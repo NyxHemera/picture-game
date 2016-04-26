@@ -8,5 +8,9 @@
 	<br>
 	<h5>Games Completed: <%= user.games_completed %></h5>
 	<br>
-	<%= link_to 'View Profile', user_path(user), class: 'btn-clear btn-submit shadows' %>
+	<% if defined?(show) && (user == current_user) %>
+		<%= link_to 'Edit Profile', edit_user_path(user), class: 'btn-clear btn-submit shadows' %>
+	<% else %>
+		<%= link_to 'View Profile', user_path(user), class: 'btn-clear btn-submit shadows' %>
+	<% end %>
 </div>

@@ -1,20 +1,7 @@
-<div class="page-header">
-  <%= link_to edit_user_path(@user), class: 'btn' do %>
-    Edit
+<div class="index">
+  <%= render "userlistitem", :user => @user, :show => true %>
+
+  <% @user.games.each do |game| %>
+    <%= render 'games/gamelistitem', :game => game %>
   <% end %>
-  <h1>Show user</h1>
 </div>
-
-<%= link_to "New Game", new_game_path, class: 'btn-clear btn-submit shadows' %>
-
-<dl class="">
-  <dt>First name:</dt>
-  <dd><%= @user.first_name %></dd>
-
-  <dt>Last name:</dt>
-  <dd><%= @user.last_name %></dd>
-
-  <dt>Email:</dt>
-  <dd><%= @user.email %></dd>
-
-</dl>

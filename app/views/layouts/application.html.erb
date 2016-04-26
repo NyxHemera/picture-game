@@ -11,7 +11,33 @@
 
 <h1 style="margin: 0 auto; text-align: center;">The Picture Game</h1>
 
+</div>
+
+<% if signed_in? %>
+<div class="wrap">
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger"><span></span></label>
+
+<ul class="dropdownnav shadows">
+	<li><%= link_to 'My Profile', user_path(current_user) %></li>
+	<li><%= link_to 'All Users', users_path %></li>
+	<li><%= link_to 'All Games', games_path %></li>
+	<li><%= link_to 'Sign Out',  signout_path, :method => :delete, class: 'btn-clear btn-destroy shadows' %></li>
+</ul>
+</div>
+<% end %>
+
 <%= yield %>
+
+<script>
+    var pattern = Trianglify({
+        width: $(document).width(),
+        height: $(document).height()
+    });
+    //document.body.appendChild(pattern.png())
+    $('body').css('background-image', 'url(' + pattern.png() + ')');
+    //$('body').css('background-image', pattern.png());
+</script>
 
 </body>
 </html>

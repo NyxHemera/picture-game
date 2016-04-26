@@ -1,0 +1,285 @@
+@create: #4bc074;
+@submit: #4587b9;
+@destroy: #b34a41;
+@warn: #daca6e;
+@lightgrey: #aaa;
+@charcoal: #2a2a2a;
+@parchment: #fafafa;
+* {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+.break {
+	margin-top: 20px;
+}
+
+// Button CSS Below!
+.btn {
+	padding: 1px 10px 1px 10px;
+	color: @parchment;
+	border-width: 1px;
+	border-style: solid;
+	border-color: @lightgrey;
+	border-radius: 5px;
+	outline: none;
+	transition: background-color ease 250ms, color ease 250ms;
+	&:not(.btn-ind) {
+		background-color: @lightgrey;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		background-color: darken(@lightgrey, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @parchment;
+		background-color: darken(@lightgrey, 15%);
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.btn-clear {
+	padding: 1px 10px 1px 10px;
+	color: @lightgrey;
+	border-width: 1px;
+	border-style: solid;
+	border-color: @lightgrey;
+	border-radius: 5px;
+	outline: none;
+	transition: background-color ease 250ms, color ease 250ms;
+	&:not(.btn-ind) {
+		background-color: transparent;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		color: @parchment;
+		background-color: darken(@lightgrey, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @parchment;
+		background-color: darken(@lightgrey, 15%);
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.btn-create {
+	border-color: @create;
+	&.btn-clear {
+		color: @create;
+	}
+	&:not(.btn-ind):not(.btn-clear) {
+		background-color: @create;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		color: @parchment;
+		background-color: darken(@create, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @parchment;
+		background-color: darken(@create, 15%);
+	}
+}
+
+.btn-submit {
+	border-color: @submit;
+	&.btn-clear {
+		color: @submit;
+	}
+	&:not(.btn-ind):not(.btn-clear) {
+		background-color: @submit;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		color: @parchment;
+		background-color: darken(@submit, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @parchment;
+		background-color: darken(@submit, 15%);
+	}
+}
+
+.btn-destroy {
+	border-color: @destroy;
+	&.btn-clear {
+		color: @destroy;
+	}
+	&:not(.btn-ind):not(.btn-clear) {
+		background-color: @destroy;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		color: @parchment;
+		background-color: darken(@destroy, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @parchment;
+		background-color: darken(@destroy, 15%);
+	}
+}
+
+.btn-warn {
+	border-color: @warn;
+	&.btn-clear {
+		color: @warn;
+	}
+	&:not(.btn-ind):not(.btn-clear) {
+		background-color: @warn;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		color: @parchment;
+		background-color: darken(@warn, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @parchment;
+		background-color: darken(@warn, 15%);
+	}
+}
+
+// Indicators, meant to contain dynamic text that changes based on button presses from surrounding btn's. These really only make sense within btn-groups.
+.btn-ind {
+	color: @charcoal;
+	background-color: transparent;
+}
+
+// These are groups of btn elements listed side by side with no spacing. Borders connect on the tops and bottoms and the only curves are on the outermost corners of the group.
+btn-group {
+	font-size: 0;
+	> * {
+		margin: 0;
+	}
+	> .btn:not(:first-child):not(:last-child) {
+		border-right-style: none;
+		border-left-style: none;
+		border-radius: 0;
+	}
+	> .btn:first-child {
+		border-right-style: none;
+		border-radius: 5px 0 0 5px;
+	}
+	> .btn:last-child {
+		border-left-style: none;
+		border-radius: 0 5px 5px 0;
+	}
+	> .btn-clear:not(:first-child):not(:last-child) {
+		border-right-style: none;
+		border-left-style: none;
+		border-radius: 0;
+	}
+	> .btn-clear:first-child {
+		border-right-style: none;
+		border-radius: 5px 0 0 5px;
+	}
+	> .btn-clear:last-child {
+		border-left-style: none;
+		border-radius: 0 5px 5px 0;
+	}
+}
+
+.btn-group {
+	font-size: 0;
+	> * {
+		margin: 0;
+	}
+	> .btn:not(:first-child):not(:last-child) {
+		border-right-style: none;
+		border-left-style: none;
+		border-radius: 0;
+	}
+	> .btn:first-child {
+		border-right-style: none;
+		border-radius: 5px 0 0 5px;
+	}
+	> .btn:last-child {
+		border-left-style: none;
+		border-radius: 0 5px 5px 0;
+	}
+	> .btn-clear:not(:first-child):not(:last-child) {
+		border-right-style: none;
+		border-left-style: none;
+		border-radius: 0;
+	}
+	> .btn-clear:first-child {
+		border-right-style: none;
+		border-radius: 5px 0 0 5px;
+	}
+	> .btn-clear:last-child {
+		border-left-style: none;
+		border-radius: 0 5px 5px 0;
+	}
+}
+
+.dropdown {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	li ul {
+		opacity: 0;
+		visibility: hidden;
+		transition: ease 200ms;
+	}
+	> li a:hover + ul {
+		opacity: 1;
+		visibility: visible;
+	}
+	> li ul:hover {
+		opacity: 1;
+		visibility: visible;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	&:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.tooltiptext {
+	white-space: nowrap;
+	visibility: hidden;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	color: white;
+	margin: 0;
+	padding: 3px;
+	border-radius: 3px;
+
+	position: absolute;
+	z-index: 1;
+	transition: ease 500ms;
+	> li {
+		display: inline-block;
+	}
+}
+
+.tt-right {
+	left: 105%;
+	top: -3px;
+}
+
+.tt-left {
+	right: 105%;
+	top: -3px;
+}
+
+.tt-top {
+	left: -3px;
+	bottom: 105%;
+}
+
+.shadows {
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, .75);
+}

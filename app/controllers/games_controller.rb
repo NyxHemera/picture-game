@@ -19,6 +19,12 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
+    @played = false
+    @game.users.each do |user|
+      if current_user == user
+        @played = true
+      end
+    end
   end
 
   def create
@@ -27,6 +33,8 @@ class GamesController < ApplicationController
     @game.stories.push(params[:game][:story])
     @game.num_rounds = params[:game][:num_rounds]
     @game.text_last = !@game.text_last
+    current_user.games_created += 1;
+    current_user.save
     respond_to do |format|
       if @game.save
         format.html { redirect_to games_path, notice: 'Welcome!' }
@@ -50,6 +58,10 @@ class GamesController < ApplicationController
 
     if @game.num_rounds <= (@game.stories.length + @game.draw_urls.length)
       @game.finished = true
+      @game.users.each do |user|
+        user.games_completed += 1
+        user.save
+      end
     end
     respond_to do |format|
       if @game.update(game_params)

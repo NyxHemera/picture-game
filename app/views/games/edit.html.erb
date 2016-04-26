@@ -1,19 +1,27 @@
-<div class="index">
-	<% if @game.finished %>
-		<% redirect_to game_path(@game) %>
-	<% end %>
+<% if @played %>
+	<div class="index">
+		<h3>This game is still in progress!</h3>
+		<h3>You should start a new one!</h3>
+		<%= link_to "New Game", new_game_path, class: 'btn-clear btn-submit shadows' %>
+	</div>
+<% else %>
+	<div class="index">
+		<% if @game.finished %>
+			<% redirect_to game_path(@game) %>
+		<% end %>
 
-	<% if @game.text_last %>
-		<h3><%= @game.stories.last %></h3>
-		<div id="canvas-wrap"></div>
-    <script>
-			$(document).ready(function() { 
-				CA = new CanvasActual();
-			});
-		</script>
-		<%= render 'imggameform' %>
-	<% else %>
-		<img src=<%= @game.draw_urls.last %>>
-		<%= render 'textgameform' %>
-	<% end %>
-</div>
+		<% if @game.text_last %>
+			<h3><%= @game.stories.last %></h3>
+			<div id="canvas-wrap"></div>
+	    <script>
+				$(document).ready(function() { 
+					CA = new CanvasActual();
+				});
+			</script>
+			<%= render 'imggameform' %>
+		<% else %>
+			<img src=<%= @game.draw_urls.last %>>
+			<%= render 'textgameform' %>
+		<% end %>
+	</div>
+<% end %>
