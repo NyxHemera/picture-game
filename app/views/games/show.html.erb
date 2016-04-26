@@ -2,7 +2,7 @@
   <% for i in 0..@game.stories.length %>
     <h3><%= @game.stories[i] %></h3>
     <% if i < @game.draw_urls.length %>
-      <img src=<%= @game.draw_urls[i] %>>
+      <img src=<%= @game.draw_urls[i] %> class='shadows'>
     <% end %>
   <% end %>
 </div>

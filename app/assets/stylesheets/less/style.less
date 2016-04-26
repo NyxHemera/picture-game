@@ -6,6 +6,53 @@
 	align-items: center;
 }
 
+.text-title {
+	margin: 0 auto;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.text-title-game {
+	margin: 30px auto;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+label[for='game_num_rounds'] {
+	margin: 10px 0 10px 0;
+	text-align: center;
+}
+
+.edit_game {
+	#game_story {
+		margin: 20px 0;
+	}
+}
+
+#game_num_rounds {
+	margin-bottom: 30px;
+}
+
+#game_story {
+	width: 25vw;
+	height: 10vh;
+}
+
+#new_game, .edit_game {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	input:last-child {
+		margin: 0 0 30px 0;
+	}
+}
+
+#new_game {
+	#game_story {
+		margin-bottom: 20px;
+	}
+}
+
 .user-li-wrap {
 	position: relative;
 	box-sizing: border-box;
@@ -97,52 +144,55 @@
 }
 
 label[for="nav-trigger"] {
-  /* critical positioning styles */
+  // critical positioning styles
   position: absolute;
   left: 15px; top: 15px;
   z-index: 2;
   
-  /* non-critical apperance styles */
+  // non-critical apperance styles 
   height: 35px;
   width: 35px;
   cursor: pointer;
-  //background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
-  //background-size: contain;
-  & span, & span:before, & span:after {
-	  cursor: pointer;
-	  border-radius: 1px;
+  span {
+  	cursor:pointer;
+	  border-radius: 10px;
 	  height: 5px;
 	  width: 35px;
-	  background: white;
+	  background: rgba(0, 0, 0, 0.7);;
 	  position: absolute;
 	  display: block;
 	  content: '';
 	  transition: all 500ms ease-in-out;
-	}
-	span {
+  }
+  /*
+  span:nth-of-type(2) {
+  	background-color: transparent;
+  }*/
+  span:first-child {
+  	top: 0;
+  }
+  span:nth-of-type(2), span:nth-of-type(3) {
   	top: 15px;
   }
-	span:before {
-		top: -10px;
-	}
-	span:after {
-		bottom: -10px;
-	}
+  span:last-child {
+  	bottom: 0;
+  }
+
 }
 
 .nav-trigger:checked ~ label[for="nav-trigger"] {
 	span {
+		top: 15px;
+	}
+	span:first-child, span:last-child {
 		background-color: transparent;
 	}
-	span:before, span:after {
-		top: 0;
-	}
-	span:before {
-		transform: rotate(45deg);
-	}
-	span:after {
-		transform: rotate(-45deg);
-	}
+  span:nth-of-type(2) {
+  	transform: rotate(45deg);
+  }
+  span:nth-of-type(3) {
+  	transform: rotate(-45deg);
+  }
 }
 
 .nav-trigger:checked ~ .dropdownnav {
@@ -168,11 +218,12 @@ label[for="nav-trigger"] {
 	li {
 		margin: 5px 0;
 		text-align: center;
-		&:not(:first-child):not(:last-child) {
+		&:not(:first-child) {
 			border-top: solid rgba(0, 0, 0, 0.75) 1px;
 		}
-		&:last-child {
+		&:last-child, &:nth-child(4) {
 			margin-top: 10px;
+			border-top: none;
 		}
 	}
 }
@@ -186,6 +237,10 @@ label[for="nav-trigger"] {
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
+	pointer-events: none;
+	* {
+		pointer-events:all;
+	}
 }
 
 .tooltip {

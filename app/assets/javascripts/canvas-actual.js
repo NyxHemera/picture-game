@@ -32,6 +32,8 @@ class CanvasActual {
 			color: "black"
 		});
 
+		this.drawSets();
+
 		var self = this;
 		this.canvasEl.on("mousedown mousemove mouseup mouseleave", function(e) {
 			self.handleMouse(e);
@@ -94,7 +96,8 @@ class CanvasActual {
 
 	drawSets() {
 		//console.log(this.points);
-		this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+		this.ctx.fillStyle = "#FFFFFF";
+		this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
 		for(var i=0; i<this.points.length; i++) {
 			this.draw(this.points[i]);
 		}
@@ -322,10 +325,4 @@ class ToolBar {
 		});
 	}
 
-}
-
-function setImageVal() {
-	var dataURL =  CA.canvas.toDataURL('image/png');
-	//console.log(dataURL);
-	$('#game_image').val(dataURL);
 }

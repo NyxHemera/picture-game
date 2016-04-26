@@ -5,6 +5,43 @@
   justify-content: center;
   align-items: center;
 }
+.text-title {
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+.text-title-game {
+  margin: 30px auto;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+label[for='game_num_rounds'] {
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+.edit_game #game_story {
+  margin: 20px 0;
+}
+#game_num_rounds {
+  margin-bottom: 30px;
+}
+#game_story {
+  width: 25vw;
+  height: 10vh;
+}
+#new_game,
+.edit_game {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+#new_game input:last-child,
+.edit_game input:last-child {
+  margin: 0 0 30px 0;
+}
+#new_game #game_story {
+  margin-bottom: 20px;
+}
 .user-li-wrap {
   position: relative;
   box-sizing: border-box;
@@ -90,49 +127,50 @@
   clip: rect(0, 0, 0, 0);
 }
 label[for="nav-trigger"] {
-  /* critical positioning styles */
   position: absolute;
   left: 15px;
   top: 15px;
   z-index: 2;
-  /* non-critical apperance styles */
   height: 35px;
   width: 35px;
   cursor: pointer;
+  /*
+  span:nth-of-type(2) {
+  	background-color: transparent;
+  }*/
 }
-label[for="nav-trigger"] span,
-label[for="nav-trigger"] span:before,
-label[for="nav-trigger"] span:after {
+label[for="nav-trigger"] span {
   cursor: pointer;
-  border-radius: 1px;
+  border-radius: 10px;
   height: 5px;
   width: 35px;
-  background: white;
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   display: block;
   content: '';
   transition: all 500ms ease-in-out;
 }
-label[for="nav-trigger"] span {
-  top: 15px;
-}
-label[for="nav-trigger"] span:before {
-  top: -10px;
-}
-label[for="nav-trigger"] span:after {
-  bottom: -10px;
-}
-.nav-trigger:checked ~ label[for="nav-trigger"] span {
-  background-color: transparent;
-}
-.nav-trigger:checked ~ label[for="nav-trigger"] span:before,
-.nav-trigger:checked ~ label[for="nav-trigger"] span:after {
+label[for="nav-trigger"] span:first-child {
   top: 0;
 }
-.nav-trigger:checked ~ label[for="nav-trigger"] span:before {
+label[for="nav-trigger"] span:nth-of-type(2),
+label[for="nav-trigger"] span:nth-of-type(3) {
+  top: 15px;
+}
+label[for="nav-trigger"] span:last-child {
+  bottom: 0;
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span {
+  top: 15px;
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span:first-child,
+.nav-trigger:checked ~ label[for="nav-trigger"] span:last-child {
+  background-color: transparent;
+}
+.nav-trigger:checked ~ label[for="nav-trigger"] span:nth-of-type(2) {
   transform: rotate(45deg);
 }
-.nav-trigger:checked ~ label[for="nav-trigger"] span:after {
+.nav-trigger:checked ~ label[for="nav-trigger"] span:nth-of-type(3) {
   transform: rotate(-45deg);
 }
 .nav-trigger:checked ~ .dropdownnav {
@@ -159,11 +197,13 @@ label[for="nav-trigger"] span:after {
   margin: 5px 0;
   text-align: center;
 }
-.dropdownnav li:not(:first-child):not(:last-child) {
+.dropdownnav li:not(:first-child) {
   border-top: solid rgba(0, 0, 0, 0.75) 1px;
 }
-.dropdownnav li:last-child {
+.dropdownnav li:last-child,
+.dropdownnav li:nth-child(4) {
   margin-top: 10px;
+  border-top: none;
 }
 .wrap {
   position: fixed;
@@ -174,6 +214,10 @@ label[for="nav-trigger"] span:after {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  pointer-events: none;
+}
+.wrap * {
+  pointer-events: all;
 }
 .tooltip {
   position: relative;
