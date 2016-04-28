@@ -102,6 +102,22 @@ label[for='game_num_rounds'] {
 	}
 }
 
+.form-fixed {
+	label {
+		font-size: 3vmin;
+		color: @text-icon;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+	}
+	input {
+		margin: 10px 0;
+	}
+	input[type='submit'] {
+		display: block;
+		margin: 10px auto;
+		font-size: 4vmin;
+	}
+}
+
 .game-li-wrap {
 	position: relative;
 	display: flex;
@@ -430,6 +446,12 @@ label[for='nav-trigger'] {
 	.cell {
 		max-width: 90vw;
 		margin: 0;
+	}
+	.form-fixed {
+		width: 50vw;
+		label {
+			font-size: 2vh;
+		}
 	}
 	.overlay-text-wrap {
 		width: 80vw;

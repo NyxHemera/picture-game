@@ -265,6 +265,103 @@ btn-group {
 	}
 }
 
+.form-flex {
+	margin: 0 auto;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	width: 25vw;
+	padding: 1vw;
+}
+
+.form-fixed {
+	margin: 0 auto;
+	width: 25vw;
+	padding: 1vw;
+}
+
+.inp-text {
+	padding: 5px;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: @lightgrey;
+	width: 100%;
+	outline: none;
+	&:not(.disabled):hover {
+		border-color: darken(@lightgrey, 10%);
+		border-width: 1px;		
+	}
+	&:not(.disabled):active {
+		border-color: darken(@lightgrey, 15%);
+		border-width: 1px;		
+	}
+	&:not(.disabled):focus {
+		border-color: darken(@lightgrey, 15%);
+		border-width: 1px;
+	}
+}
+
+.inp-text-create {
+	&:not(.disabled):hover {
+		border-color: darken(@create, 10%);
+	}
+	&:not(.disabled):active {
+		border-color: darken(@create, 15%);
+	}
+	&:not(.disabled):focus {
+		border-color: darken(@create, 15%);
+	}
+}
+
+.inp-text-accent {
+	&:not(.disabled):hover {
+		border-color: darken(@accent, 10%);
+	}
+	&:not(.disabled):active {
+		border-color: darken(@accent, 15%);
+	}
+	&:not(.disabled):focus {
+		border-color: darken(@accent, 15%);
+	}
+}
+
+.inp-text-submit {
+	&:not(.disabled):hover {
+		border-color: darken(@submit, 10%);
+	}
+	&:not(.disabled):active {
+		border-color: darken(@submit, 15%);
+	}
+	&:not(.disabled):focus {
+		border-color: darken(@submit, 15%);
+	}
+}
+
+.inp-text-destroy {
+	&:not(.disabled):hover {
+		border-color: darken(@destroy, 10%);
+	}
+	&:not(.disabled):active {
+		border-color: darken(@destroy, 15%);
+	}
+	&:not(.disabled):focus {
+		border-color: darken(@destroy, 15%);
+	}
+}
+
+.inp-text-warn {
+	&:not(.disabled):hover {
+		border-color: darken(@warn, 10%);
+	}
+	&:not(.disabled):active {
+		border-color: darken(@warn, 15%);
+	}
+	&:not(.disabled):focus {
+		border-color: darken(@warn, 15%);
+	}
+}
+
 .tooltip {
 	position: relative;
 	display: inline-block;
