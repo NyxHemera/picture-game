@@ -30,10 +30,10 @@ label[for='game_num_rounds'] {
   margin-bottom: 20px;
 }
 .cell {
+  min-width: 30vw;
+  max-width: 60vw;
   margin-left: 5vw;
   text-align: center;
-  max-width: 60vw;
-  min-width: 30vw;
 }
 .cell img {
   max-width: 100%;
@@ -43,12 +43,12 @@ label[for='game_num_rounds'] {
   z-index: 10;
   left: 15px;
   display: inline-block;
-  list-style: none;
-  padding: 5px;
-  margin: 0;
-  opacity: 0;
   visibility: hidden;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
   transition: ease 200ms;
+  opacity: 0;
   background-color: rgba(255, 255, 255, 0.9);
 }
 .dropdownnav a {
@@ -68,17 +68,17 @@ label[for='game_num_rounds'] {
   border-top: none;
 }
 .finished-row {
-  width: 100vw;
   display: flex;
+  width: 100vw;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
-.finished-row:not(:last-of-type) {
-  margin-bottom: 5vh;
-}
 .finished-row h3:last-child {
   margin-left: 5vw;
+}
+.finished-row:not(:last-of-type) {
+  margin-bottom: 5vh;
 }
 .game-li-wrap {
   position: relative;
@@ -87,11 +87,11 @@ label[for='game_num_rounds'] {
   width: 400px;
   height: 100px;
   margin: 0 auto;
+  margin-bottom: 20px;
   padding: 5px;
+  border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.9);
   justify-content: space-between;
-  margin-bottom: 20px;
-  border-radius: 2px;
 }
 .game-li-wrap > div {
   position: relative;
@@ -111,23 +111,23 @@ label[for='game_num_rounds'] {
   left: 0;
 }
 .game-li-wrap > a {
-  text-decoration: none;
-  color: inherit;
-  position: absolute;
+  font-size: 18px;
   font-weight: bold;
+  position: absolute;
   right: 5px;
   bottom: 5px;
-  font-size: 18px;
+  text-decoration: none;
+  color: inherit;
 }
 .home-wrap {
   display: flex;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  transition: all 500ms ease;
   flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
   align-items: center;
-  transition: all 500ms ease;
 }
 .home-wrap button {
   font-size: 5vmin;
@@ -136,17 +136,17 @@ label[for='game_num_rounds'] {
   margin-left: 30px;
 }
 .home-wrap > h3 {
-  color: #FFFFFF;
   font-size: 4vmin;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-  border-bottom: dotted 0.4vmin rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  color: #fff;
+  border-bottom: dotted 0.4vmin rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .index {
   position: relative;
   z-index: 0;
-  width: 100vw;
   display: flex;
+  width: 100vw;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
@@ -156,8 +156,8 @@ label[for='game_num_rounds'] {
   max-width: 1100px;
 }
 .logo-sm {
-  width: 40vmax;
   display: block;
+  width: 40vmax;
   margin: 0 auto;
   padding-left: 30px;
 }
@@ -166,77 +166,77 @@ label[for='game_num_rounds'] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
-label[for="nav-trigger"] {
+label[for='nav-trigger'] {
   position: absolute;
-  left: 15px;
-  top: 15px;
   z-index: 2;
-  height: 35px;
+  top: 15px;
+  left: 15px;
   width: 35px;
+  height: 35px;
   cursor: pointer;
   /*
   span:nth-of-type(2) {
   	background-color: transparent;
   }*/
 }
-label[for="nav-trigger"] span {
-  cursor: pointer;
-  border-radius: 10px;
-  height: 5px;
-  width: 35px;
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  display: block;
-  content: '';
-  transition: all 500ms ease-in-out;
-}
-label[for="nav-trigger"] span:first-child {
+label[for='nav-trigger'] span:first-child {
   top: 0;
 }
-label[for="nav-trigger"] span:nth-of-type(2),
-label[for="nav-trigger"] span:nth-of-type(3) {
+label[for='nav-trigger'] span:nth-of-type(2),
+label[for='nav-trigger'] span:nth-of-type(3) {
   top: 15px;
 }
-label[for="nav-trigger"] span:last-child {
+label[for='nav-trigger'] span:last-child {
   bottom: 0;
 }
-.nav-trigger:checked ~ label[for="nav-trigger"] span {
-  top: 15px;
+label[for='nav-trigger'] span {
+  position: absolute;
+  display: block;
+  width: 35px;
+  height: 5px;
+  content: '';
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
 }
-.nav-trigger:checked ~ label[for="nav-trigger"] span:first-child,
-.nav-trigger:checked ~ label[for="nav-trigger"] span:last-child {
+.nav-trigger:checked ~ label[for='nav-trigger'] span:first-child,
+.nav-trigger:checked ~ label[for='nav-trigger'] span:last-child {
   background-color: transparent;
 }
-.nav-trigger:checked ~ label[for="nav-trigger"] span:nth-of-type(2) {
+.nav-trigger:checked ~ label[for='nav-trigger'] span:nth-of-type(2) {
   transform: rotate(45deg);
 }
-.nav-trigger:checked ~ label[for="nav-trigger"] span:nth-of-type(3) {
+.nav-trigger:checked ~ label[for='nav-trigger'] span:nth-of-type(3) {
   transform: rotate(-45deg);
 }
+.nav-trigger:checked ~ label[for='nav-trigger'] span {
+  top: 15px;
+}
 .nav-trigger:checked ~ .dropdownnav {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 .overlay-wrap {
   position: absolute;
   top: 0;
   left: 0;
-  visibility: hidden;
-  opacity: 0;
   display: flex;
-  height: 100vh;
+  visibility: hidden;
   width: 100vw;
+  height: 100vh;
+  transition: opacity 500ms ease;
+  opacity: 0;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  transition: opacity 500ms ease;
 }
 .overlay-text-wrap {
   width: 50vw;
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
   pointer-events: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .text-title-game {
   margin: 30px auto;
@@ -244,9 +244,9 @@ label[for="nav-trigger"] span:last-child {
   color: rgba(0, 0, 0, 0.8);
 }
 .text-title-page {
-  color: #FFFFFF;
   font-size: 4vmin;
-  border-bottom: dashed 0.4vmin #FFFFFF;
+  color: #fff;
+  border-bottom: dashed 0.4vmin #fff;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .tooltip {
@@ -259,24 +259,24 @@ label[for="nav-trigger"] span:last-child {
   opacity: 1;
 }
 .tooltiptext {
-  white-space: nowrap;
-  visibility: hidden;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-  margin: 0;
-  padding: 3px;
-  border-radius: 3px;
   position: absolute;
   z-index: 1;
+  visibility: hidden;
+  margin: 0;
+  padding: 3px;
   transition: ease 500ms;
+  white-space: nowrap;
+  opacity: 0;
+  color: white;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .tooltiptext > li {
   display: inline-block;
 }
 .tooltiptext > li a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 .user-li-wrap {
   position: relative;
@@ -284,24 +284,24 @@ label[for="nav-trigger"] span:last-child {
   width: 40vw;
   height: 15vw;
   margin-bottom: 20px;
+  color: #212121;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
-  color: #212121;
 }
 .user-li-wrap img {
   position: absolute;
   top: .5vw;
   left: .5vw;
-  max-height: 14vw;
   max-width: 14vw;
+  max-height: 14vw;
 }
 .user-li-wrap ul {
   position: relative;
   top: .5vw;
   left: 15vw;
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .user-li-wrap h4,
 .user-li-wrap h5 {
@@ -312,37 +312,37 @@ label[for="nav-trigger"] span:last-child {
   font-size: 2.5vw;
 }
 .user-li-wrap h5 {
-  color: #595959;
   font-size: 2.0vw;
+  color: #595959;
 }
 .user-li-wrap > a {
-  text-decoration: none;
-  color: inherit;
-  position: absolute;
+  font-size: 1.8vw;
   font-weight: bold;
+  position: absolute;
   right: .5vw;
   bottom: .5vw;
-  font-size: 1.8vw;
+  text-decoration: none;
+  color: inherit;
 }
 .wrap {
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
+  display: flex;
   width: 100vw;
   height: 100vh;
-  display: flex;
+  pointer-events: none;
   flex-flow: row nowrap;
   align-items: center;
-  pointer-events: none;
 }
 .wrap * {
   pointer-events: all;
 }
 @media only screen and (max-device-width: 768px) {
   body {
-    background-attachment: scroll;
     background-repeat: repeat;
+    background-attachment: scroll;
   }
   .user-li-wrap {
     width: 95vw;
@@ -352,16 +352,16 @@ label[for="nav-trigger"] span:last-child {
   .user-li-wrap img {
     top: .8125vw;
     left: .8125vw;
-    max-height: 34vw;
     max-width: 34vw;
+    max-height: 34vw;
   }
   .user-li-wrap ul {
     position: relative;
     top: .5vw;
     left: 35.625vw;
-    list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
   }
   .user-li-wrap h4,
   .user-li-wrap h5 {
@@ -372,17 +372,17 @@ label[for="nav-trigger"] span:last-child {
     font-size: 6vw;
   }
   .user-li-wrap h5 {
-    color: #595959;
     font-size: 5vw;
+    color: #595959;
   }
   .user-li-wrap > a {
+    font-size: 4.5vw;
     right: 1vw;
     bottom: 1vw;
-    font-size: 4.5vw;
   }
   .cell {
-    margin: 0;
     max-width: 90vw;
+    margin: 0;
   }
   .overlay-text-wrap {
     width: 80vw;
