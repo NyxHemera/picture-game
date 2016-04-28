@@ -1,16 +1,14 @@
 <div class="user-li-wrap shadows">
 	<img class="shadows" src=<%= user.photo_url %>>
-	<h4><%= user.first_name %> <%= user.last_name %></h4>
-	<br>
-	<h5>Games Created: <%= user.games_created %></h5>
-	<br>
-	<h5>Games Playing: <%= user.games.length - user.games_completed %></h5>
-	<br>
-	<h5>Games Completed: <%= user.games_completed %></h5>
-	<br>
+	<ul>
+		<li><h4><%= user.first_name %> <%= user.last_name %></h4></li>
+		<li><h5>Games Created: <%= user.games_created %></h5></li>
+		<li><h5>Games Playing: <%= user.games.length - user.games_completed %></h5></li>
+		<li><h5>Games Completed: <%= user.games_completed %></h5></li>
+	</ul>
 	<% if defined?(show) && (user == current_user) %>
-		<%= link_to 'Edit Profile', edit_user_path(user), class: 'btn-clear btn-submit shadows' %>
+		<%= link_to 'Edit Profile', edit_user_path(user), class: 'btn-clear btn-accent shadows' %>
 	<% else %>
-		<%= link_to 'View Profile', user_path(user), class: 'btn-clear btn-submit shadows' %>
+		<%= link_to 'View Profile', user_path(user), class: 'btn-clear btn-accent shadows' %>
 	<% end %>
 </div>

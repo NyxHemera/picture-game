@@ -243,6 +243,12 @@ label[for="nav-trigger"] span:last-child {
   text-align: center;
   color: rgba(0, 0, 0, 0.8);
 }
+.text-title-page {
+  color: #FFFFFF;
+  font-size: 4vmin;
+  border-bottom: dashed 0.4vmin #FFFFFF;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
 .tooltip {
   position: relative;
   display: inline-block;
@@ -275,42 +281,48 @@ label[for="nav-trigger"] span:last-child {
 .user-li-wrap {
   position: relative;
   box-sizing: border-box;
-  width: 400px;
-  height: 150px;
+  width: 40vw;
+  height: 15vw;
   margin-bottom: 20px;
-  border-radius: 2px;
+  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
+  color: #212121;
 }
 .user-li-wrap img {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  max-height: 140px;
-  max-width: 140px;
+  top: .5vw;
+  left: .5vw;
+  max-height: 14vw;
+  max-width: 14vw;
+}
+.user-li-wrap ul {
+  position: relative;
+  top: .5vw;
+  left: 15vw;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .user-li-wrap h4,
 .user-li-wrap h5 {
-  display: inline-block;
-  position: relative;
-  top: 5px;
-  left: 150px;
   margin: 0;
   padding: 0;
 }
 .user-li-wrap h4 {
-  font-size: 25px;
+  font-size: 2.5vw;
 }
 .user-li-wrap h5 {
-  font-size: 20px;
+  color: #595959;
+  font-size: 2.0vw;
 }
 .user-li-wrap > a {
   text-decoration: none;
   color: inherit;
   position: absolute;
   font-weight: bold;
-  right: 5px;
-  bottom: 5px;
-  font-size: 18px;
+  right: .5vw;
+  bottom: .5vw;
+  font-size: 1.8vw;
 }
 .wrap {
   position: fixed;
@@ -328,25 +340,31 @@ label[for="nav-trigger"] span:last-child {
   pointer-events: all;
 }
 @media only screen and (max-device-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-repeat: repeat;
+  }
   .user-li-wrap {
-    position: relative;
-    box-sizing: border-box;
     width: 95vw;
     height: 35.625vw;
     margin-bottom: 10px;
   }
   .user-li-wrap img {
-    position: absolute;
-    top: 5px;
-    left: 5px;
+    top: .8125vw;
+    left: .8125vw;
     max-height: 34vw;
     max-width: 34vw;
   }
+  .user-li-wrap ul {
+    position: relative;
+    top: .5vw;
+    left: 35.625vw;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
   .user-li-wrap h4,
   .user-li-wrap h5 {
-    position: relative;
-    top: 5px;
-    left: 36vw;
     margin: 0;
     padding: 0;
   }
@@ -354,14 +372,13 @@ label[for="nav-trigger"] span:last-child {
     font-size: 6vw;
   }
   .user-li-wrap h5 {
+    color: #595959;
     font-size: 5vw;
   }
-  .user-li-wrap button {
-    position: absolute;
-    font-weight: bold;
-    right: 5px;
-    bottom: 5px;
-    font-size: 5vw;
+  .user-li-wrap > a {
+    right: 1vw;
+    bottom: 1vw;
+    font-size: 4.5vw;
   }
   .cell {
     margin: 0;

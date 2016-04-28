@@ -1,6 +1,16 @@
+@accent: #FF5722;
+@text-icon: #FFFFFF;
+@dark-primary: #0097A7;
+@primary: #00BCD4;
+@light-primary: #B2EBF2;
+@text-primary: #212121;
+@text-secondary: #727272;
+@divider: #b6b6b6;
+
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
+  //min-width: 100vw;
 }
 
 label[for='game_num_rounds'] {
@@ -270,6 +280,13 @@ label[for="nav-trigger"] {
 	color: rgba(0, 0, 0, 0.8);
 }
 
+.text-title-page {
+	color: @text-icon;
+	font-size: 4vmin;
+	border-bottom: dashed .4vmin @text-icon;
+	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
 .tooltip {
 	position: relative;
 	display: inline-block;
@@ -305,43 +322,48 @@ label[for="nav-trigger"] {
 .user-li-wrap {
 	position: relative;
 	box-sizing: border-box;
-	width: 400px;
-	height: 150px;
-	//margin: 0 auto;
+	width: 40vw;
+	height: 15vw;
 	margin-bottom: 20px;
-	border-radius: 2px;
-	//border: solid black 1px;
+	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.90);
+	color: @text-primary;
 	img {
 		position: absolute;
-		top: 5px;
-		left: 5px;
-		max-height: 140px;
-		max-width: 140px;
+		top: .5vw;
+		left: .5vw;
+		max-height: 14vw;
+		max-width: 14vw;
+	}
+	ul {
+		position: relative;
+		top: .5vw;
+		//set to right of image
+		left: 15vw;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 	h4,
 	h5 {
-		display: inline-block;
-		position: relative;
-		top: 5px;
-		left: 150px;
 		margin: 0;
 		padding: 0;
 	}
 	h4 {
-		font-size: 25px;
+		font-size: 2.5vw;
 	}
 	h5 {
-		font-size: 20px;
+		color: darken(@text-secondary, 10%);
+		font-size: 2.0vw;
 	}
 	> a {
 		text-decoration: none;
 		color: inherit;
 		position: absolute;
 		font-weight: bold;
-		right: 5px;
-		bottom: 5px;
-		font-size: 18px;
+		right: .5vw;
+		bottom: .5vw;
+		font-size: 1.8vw;
 	}
 }
 
@@ -362,24 +384,31 @@ label[for="nav-trigger"] {
 }
 
 @media only screen and (max-device-width : 768px) {
+    body {
+    	background-attachment: scroll;
+    	background-repeat: repeat;
+    }
     .user-li-wrap {
-			position: relative;
-			box-sizing: border-box;
 			width: 95vw;
 			height: 35.625vw;
 			margin-bottom: 10px;
 			img {
-				position: absolute;
-				top: 5px;
-				left: 5px;
+				top: .8125vw;
+				left: .8125vw;
 				max-height: 34vw;
 				max-width: 34vw;
 			}
+			ul {
+				position: relative;
+				top: .5vw;
+				//set to right of image
+				left: 35.625vw;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
 			h4,
 			h5 {
-				position: relative;
-				top: 5px;
-				left: 36vw;
 				margin: 0;
 				padding: 0;
 			}
@@ -387,14 +416,13 @@ label[for="nav-trigger"] {
 				font-size: 6vw;
 			}
 			h5 {
+				color: darken(@text-secondary, 10%);
 				font-size: 5vw;
 			}
-			button {
-				position: absolute;
-				font-weight: bold;
-				right: 5px;
-				bottom: 5px;
-				font-size: 5vw;
+			> a {
+				right: 1vw;
+				bottom: 1vw;
+				font-size: 4.5vw;
 			}
 		}
 

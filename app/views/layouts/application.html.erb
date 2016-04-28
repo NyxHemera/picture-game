@@ -33,14 +33,24 @@
 <%= yield %>
 
 <script>
+  function reloadBG() {
+    var width = $(document).width();
+    var height = $(document).height();
+    if(height < screen.height) {
+      height = screen.height;
+    }
+
+    if(width < screen.width) {
+      width = screen.width;
+    }
     var pattern = Trianglify({
-        width: screen.width*1.2,
-        height: screen.height*1.2,
+        width: width*1.2,
+        height: height*1.2,
         x_colors: ['#0097A7', '#00BCD4', '#B2EBF2', '#FFFFFF']
     });
-    //document.body.appendChild(pattern.png())
     $('body').css('background-image', 'url(' + pattern.png() + ')');
-    //$('body').css('background-image', pattern.png());
+  }
+  reloadBG();
 </script>
 
 </body>
