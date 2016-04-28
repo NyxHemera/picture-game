@@ -1,8 +1,46 @@
 <% provide(:title, 'Picture Game - Home') %>
-<div class="">
-  <h1>Welcome to the Picture Game</h1>
-  <h3>This is the home page for the Picture Game.</h3>
+<div class="home-wrap">
+  <img src="/logo-lg.png" class="logo-lg">
   <br/>
-  <button><%= link_to 'Sign-Up', signup_path %></button>
-  <button><%= link_to 'Sign-In', signin_path %></button>
+  <div>
+	  <button class="btn btn-accent shadows"><%= link_to 'Sign-Up', signup_path %></button>
+	  <button class="btn btn-accent shadows"><%= link_to 'Sign-In', signin_path %></button>
+  </div>
+
+  <h3 onclick="togOverlay()">More Info</h3>
 </div>
+
+<div class="overlay-wrap" onclick="togOverlay()">
+	<div class="overlay-text-wrap shadows" onclick="">
+		<h2>What is The Picture Game?</h2>
+		<p>The Picture Game is very similar to the telephone game you used to play as a kid. The first player writes a short, 1-2 sentence story. The second player reads that story and draws a picture of the events in that story. After that, the third player can only see the drawing, and must write what they think the story should be. The players alternate from stories to drawings until the game is done.</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var overlay = false;
+	function togOverlay() {
+		console.log("test");
+		if(overlay) {
+			$('.overlay-wrap').css('opacity', '0');
+			setTimeout(function() {
+				$('.overlay-wrap').css('visibility', 'hidden');
+			}, 510);
+			$('.home-wrap').removeClass('blurred');	
+		}else {
+			$('.overlay-wrap').css('visibility', 'visible');
+			$('.overlay-wrap').css('opacity', '100');
+			$('.home-wrap').addClass('blurred');
+		}
+		overlay = !overlay;
+	}
+	function checkOver() {
+		overlay ? togOverlay() : "";
+	}
+	$(document).on('keydown keypress',function(e) {
+		if(e.keyCode == 27) {
+			overlay = true;
+			togOverlay();
+		}
+	});
+</script>

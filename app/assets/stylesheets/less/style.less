@@ -1,4 +1,11 @@
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .index {
+	position: relative;
+	z-index: 0;
 	width: 100vw;
 	display: flex;
 	flex-flow: column nowrap;
@@ -6,10 +13,71 @@
 	align-items: center;
 }
 
-.text-title {
+.home-wrap {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	transition: all 500ms ease;
+	button {
+		font-size: 5vmin;
+		&:last-of-type {
+			margin-left: 30px;
+		}
+	}
+	> h3 {
+		color: #FFFFFF;
+		font-size: 4vmin;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+		border-bottom: dotted .4vmin rgba(0, 0, 0, 0.5);
+		cursor: pointer;
+	}
+}
+
+.overlay-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 500ms ease;
+}
+
+.overlay-text-wrap {
+	width: 50vw;
+	padding: 15px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 10px;
+	pointer-events: none;
+}
+
+.blurred {
+	-webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.logo-lg {
+	width: 100vw;
+	max-width: 1100px;
+}
+
+.logo-sm {
+	width: 40vmax;
+	display: block;
 	margin: 0 auto;
-	text-align: center;
-	color: rgba(0, 0, 0, 0.8);
+	padding-left: 30px;
 }
 
 .text-title-game {
@@ -50,6 +118,30 @@ label[for='game_num_rounds'] {
 #new_game {
 	#game_story {
 		margin-bottom: 20px;
+	}
+}
+
+.finished-row {
+	width: 100vw;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	&:not(:last-of-type) {
+		margin-bottom: 5vh;
+	}
+	h3:last-child {
+		margin-left: 5vw;
+	}
+}
+
+.cell {
+	margin-left: 5vw;
+	text-align: center;
+	max-width: 60vw;
+	min-width: 30vw;
+	img {
+		max-width: 100%;
 	}
 }
 
@@ -202,6 +294,7 @@ label[for="nav-trigger"] {
 
 .dropdownnav {
 	position: relative;
+	z-index: 10;
 	left: 15px;
 	display: inline-block;
 	list-style: none;
@@ -230,6 +323,7 @@ label[for="nav-trigger"] {
 
 .wrap {
 	position: fixed;
+	z-index: 10;
 	top: 0;
 	left: 0;
 	width: 100vw;
@@ -310,5 +404,14 @@ label[for="nav-trigger"] {
 				bottom: 5px;
 				font-size: 5vw;
 			}
+		}
+
+		.cell {
+			margin: 0;
+			max-width: 90vw;
+		}
+
+		.overlay-text-wrap {
+			width: 80vw;
 		}
 }

@@ -5,6 +5,8 @@
 @lightgrey: #aaa;
 @charcoal: #2a2a2a;
 @parchment: #fafafa;
+@accent: #FF5722;
+@text-icon: #FFFFFF;
 * {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
@@ -80,6 +82,24 @@
 	&:not(.disabled):not(.btn-ind):active {
 		color: @parchment;
 		background-color: darken(@create, 15%);
+	}
+}
+
+.btn-accent {
+	border-color: @accent;
+	&.btn-clear {
+		color: @accent;
+	}
+	&:not(.btn-ind):not(.btn-clear) {
+		background-color: @accent;
+	}
+	&:not(.disabled):not(.btn-ind):hover {
+		color: @text-icon;
+		background-color: darken(@accent, 10%);
+	}
+	&:not(.disabled):not(.btn-ind):active {
+		color: @text-icon;
+		background-color: darken(@accent, 15%);
 	}
 }
 

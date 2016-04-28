@@ -70,6 +70,23 @@
   color: #fafafa;
   background-color: #318d52;
 }
+.btn-accent {
+  border-color: #FF5722;
+}
+.btn-accent.btn-clear {
+  color: #FF5722;
+}
+.btn-accent:not(.btn-ind):not(.btn-clear) {
+  background-color: #FF5722;
+}
+.btn-accent:not(.disabled):not(.btn-ind):hover {
+  color: #FFFFFF;
+  background-color: #ee3900;
+}
+.btn-accent:not(.disabled):not(.btn-ind):active {
+  color: #FFFFFF;
+  background-color: #d43300;
+}
 .btn-submit {
   border-color: #4587b9;
 }

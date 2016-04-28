@@ -9,11 +9,8 @@
 </head>
 <body>
 
-<h1 class="text-title">The Picture Game</h1>
-
-</div>
-
 <% if signed_in? %>
+<img src="/logo-sm.png" class='logo-sm'>
 <div class="wrap">
 <input type="checkbox" id="nav-trigger" class="nav-trigger" />
 <label for="nav-trigger">
@@ -37,8 +34,9 @@
 
 <script>
     var pattern = Trianglify({
-        width: $(document).width()*2,
-        height: $(document).height()*2
+        width: screen.width*1.2,
+        height: screen.height*1.2,
+        x_colors: ['#0097A7', '#00BCD4', '#B2EBF2', '#FFFFFF']
     });
     //document.body.appendChild(pattern.png())
     $('body').css('background-image', 'url(' + pattern.png() + ')');
