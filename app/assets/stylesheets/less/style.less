@@ -105,9 +105,9 @@ label[for='game_num_rounds'] {
 }
 
 .cell {
-	min-width: 30vw;
+	//min-width: 30vw;
 	max-width: 60vw;
-	margin-left: 5vw;
+	//margin-left: 5vw;
 	text-align: center;
 	img {
 		max-width: 100%;
@@ -382,6 +382,36 @@ label[for='nav-trigger'] {
 	}
 }
 
+.show {
+	a img {
+		position: absolute;
+		right: 85vw;
+		max-width: 10vw;
+	}
+	h3 {
+		color: @text-icon;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+		margin: 1vw 0;
+	}
+	.names {
+		position: absolute;
+		text-align: right;
+		right: 85vw;
+		font-size: 2vw;
+		margin: 1.5vw 0;
+	}
+	.names:nth-child(even) {
+
+	}
+	h3:not(.names) {
+		font-size: 3vw;
+	}
+}
+
+.showusr {
+	margin-top: 15vw;
+}
+
 .text-signin {
 	margin: 1vh;
 	color: @text-icon;
@@ -599,8 +629,14 @@ label[for='nav-trigger'] {
 		}
 	}
 
+	.show {
+		.names {
+			right: 88vw;
+		}
+	}
+
 	.cell {
-		max-width: 90vw;
+		max-width: 75vw;
 		margin: 0;
 	}
 	.form-fixed {

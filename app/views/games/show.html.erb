@@ -1,19 +1,19 @@
-<div class="index">
+<div class="index show">
 	<% j = 0 %>
   <% for i in 0..@game.stories.length-1 %>
-  <div class="finished-row">
-  	<h3><%= @game.users[j].first_name %> <%= @game.users[j].last_name %>: </h3>
+
+  	<a href=<%= user_path(@game.users[j]) %>><img class="shadows" src=<%= @game.users[j].photo_url %> ></a>
   	<% j+=1 %>
     <h3><%= @game.stories[i] %></h3>
-  </div>
+
     <% if i < @game.draw_urls.length %>
-    <div class="finished-row">
-    	<h3><%= @game.users[j].first_name %> <%= @game.users[j].last_name %>: </h3>
+
+    	<a href=<%= user_path(@game.users[j]) %>><img class="shadows showusr" src=<%= @game.users[j].photo_url %> ></a>
     	<% j+=1 %>
     	<div class="cell">
       <img src=<%= @game.draw_urls[i] %> class='shadows'>
     	</div>
-    </div>
+
     <% end %>
   <% end %>
 </div>
