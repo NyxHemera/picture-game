@@ -345,6 +345,8 @@ label[for='nav-trigger'] span {
 }
 .show h3:not(.names) {
   font-size: 3vw;
+  max-width: 60vw;
+  text-align: center;
 }
 .showusr {
   margin-top: 15vw;
