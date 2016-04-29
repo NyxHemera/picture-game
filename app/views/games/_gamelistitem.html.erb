@@ -1,26 +1,20 @@
 <div class="game-li-wrap shadows">
-	<div>
-		<h5>Creator: <%= game.users[0].first_name %> <%= game.users[0].last_name %></h4>
-		<h5 class="tooltip">
-		Players:
-		<ul class="tooltiptext">
+		<ul class="photolist">
 			<% game.users.each do |user| %>
-				<li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></li>
-				<br>
+				<li><a href=<%= user_path(user) %>><img class="shadows" src=<%= user.photo_url %> > </a></li>
 			<% end %>
 		</ul>
-		</h5>
 		<h5>Next Move: <%= game.text_last ? "Drawing" : "Text" %></h5>
-	</div>
-	<div>
 		<% if !game.finished %>
 			<h4>Turn <%= game.stories.length + game.draw_urls.length %></h4>
+
 			<h4>Turns Left: <%= game.num_rounds - (game.stories.length + game.draw_urls.length) %></h4>
+		<% else %>
+			<h4>Finished!</h4>
 		<% end %>
-	</div>
 	<% if game.finished %>
-		<%= link_to 'View', game_path(game), class: 'btn-clear btn-submit shadows' %>
+		<%= link_to 'View', game_path(game), class: 'btn-clear btn-accent shadows' %>
 	<% else %>
-		<%= link_to 'Play', edit_game_path(game), class: 'btn-clear btn-submit shadows' %>
+		<%= link_to 'Play', edit_game_path(game), class: 'btn-clear btn-accent shadows' %>
 	<% end %>
 </div>

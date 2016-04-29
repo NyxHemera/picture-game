@@ -3,13 +3,16 @@ body {
   background-attachment: fixed;
 }
 label[for='game_num_rounds'] {
-  margin: 10px 0 10px 0;
+  margin: 10px auto 10px auto;
   text-align: center;
 }
 #game_num_rounds {
   margin-bottom: 30px;
+  width: 5vw;
+  text-align: center;
 }
 #game_story {
+  margin: 0 auto;
   width: 25vw;
   height: 10vh;
 }
@@ -81,12 +84,12 @@ label[for='game_num_rounds'] {
   margin-bottom: 5vh;
 }
 .form-fixed label {
-  font-size: 3vmin;
+  font-size: 4vmin;
   color: #fff;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .form-fixed input {
-  margin: 10px 0;
+  margin: 10px auto;
 }
 .form-fixed input[type='submit'] {
   display: block;
@@ -95,40 +98,50 @@ label[for='game_num_rounds'] {
 }
 .game-li-wrap {
   position: relative;
-  display: flex;
   box-sizing: border-box;
-  width: 400px;
-  height: 100px;
+  width: 40vw;
+  height: 10vw;
   margin: 0 auto;
   margin-bottom: 20px;
-  padding: 5px;
-  border-radius: 2px;
+  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.9);
-  justify-content: space-between;
 }
-.game-li-wrap > div {
+.game-li-wrap .photolist {
+  display: inline-block;
   position: relative;
+  top: .5vw;
+  left: .5vw;
 }
 .game-li-wrap h4,
 .game-li-wrap h5 {
-  font-size: 20px;
+  color: #212121;
+  font-size: 2.0vw;
   margin: 0;
   padding: 0;
 }
-.game-li-wrap > div > h4 {
+.game-li-wrap > h4 {
   text-align: right;
-}
-.game-li-wrap > div > h5:last-child {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: .5vw;
+  right: .5vw;
+}
+.game-li-wrap > h4:last-of-type {
+  top: 2.5vw;
+}
+.game-li-wrap > h4:first-of-type {
+  top: .5vw;
+}
+.game-li-wrap > h5 {
+  position: absolute;
+  bottom: .5vw;
+  left: .5vw;
 }
 .game-li-wrap > a {
-  font-size: 18px;
+  font-size: 1.8vw;
   font-weight: bold;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: .5vw;
+  bottom: .5vw;
   text-decoration: none;
   color: inherit;
 }
@@ -251,10 +264,34 @@ label[for='nav-trigger'] span {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.9);
 }
+.photolist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.photolist li {
+  display: inline-block;
+}
+.photolist li img {
+  max-width: 4vw;
+}
+.text-signin {
+  margin: 1vh;
+  color: #fff;
+  font-size: 4vmin;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.text-signin + .btn {
+  padding: .7vmin;
+  font-size: 3vmin;
+  text-decoration: none;
+}
 .text-title-game {
   margin: 30px auto;
   text-align: center;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 5vmin;
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .text-title-page {
   font-size: 4vmin;
@@ -392,6 +429,44 @@ label[for='nav-trigger'] span {
     font-size: 4.5vw;
     right: 1vw;
     bottom: 1vw;
+  }
+  .game-li-wrap {
+    width: 95vw;
+    height: 24vw;
+    margin-bottom: 10px;
+  }
+  .game-li-wrap .photolist {
+    display: inline-block;
+    position: relative;
+    top: .5vw;
+    left: .5vw;
+  }
+  .game-li-wrap h4,
+  .game-li-wrap h5 {
+    font-size: 6.0vw;
+  }
+  .game-li-wrap > h4 {
+    top: 1vw;
+    right: 1vw;
+  }
+  .game-li-wrap > h4:last-of-type {
+    top: 7vw;
+  }
+  .game-li-wrap > h4:first-of-type {
+    top: 1vw;
+  }
+  .game-li-wrap > h5 {
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
+  }
+  .game-li-wrap > a {
+    font-size: 4.5vw;
+    right: 1vw;
+    bottom: 1vw;
+  }
+  .photolist li img {
+    max-width: 10vw;
   }
   .cell {
     max-width: 90vw;

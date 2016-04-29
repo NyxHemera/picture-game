@@ -1,19 +1,29 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
 
-<div class="">
-  <div class="">
-    <%= form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+<div class="home-wrap">
+  <img src="/logo-sm.png" class='logo-sm'>
+  <%= form_for(:session, url: sessions_path, html: { class: "form-fixed" }) do |f| %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    <%= f.label :email, class: "label-text" %>
+    <%= f.text_field :email, class: "inp-text inp-text-accent" %>
 
-      <%= f.submit "Sign in", class: "" %>
-    <% end %>
+    <%= f.label :password, class: "label-text" %>
+    <%= f.password_field :password, class: "inp-text inp-text-accent" %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
+    <%= f.submit "Sign in", class: "btn btn-accent" %>
+  <% end %>
+
+  <p class="text-signin">New user?</p>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-accent" %>
 </div>
+
+<style type="text/css">
+  .logo-sm {
+    display: none;
+  }
+  .home-wrap > .logo-sm {
+    display: block;
+    padding-top: 4vh;
+  }
+</style>

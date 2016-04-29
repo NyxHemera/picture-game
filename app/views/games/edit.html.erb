@@ -1,8 +1,8 @@
 <% if @played %>
 	<div class="index">
-		<h3>This game is still in progress!</h3>
-		<h3>You should start a new one!</h3>
-		<%= link_to "New Game", new_game_path, class: 'btn-clear btn-submit shadows' %>
+		<h3 class="text-title-game">This game is still in progress!</h3>
+		<h3 class="text-signin">You should start a new one!</h3>
+		<%= link_to "New Game", new_game_path, class: 'btn btn-accent shadows' %>
 	</div>
 <% else %>
 	<div class="index">
@@ -11,7 +11,7 @@
 		<% end %>
 
 		<% if @game.text_last %>
-			<h3><%= @game.stories.last %></h3>
+			<h3 class="text-title-game"><%= @game.stories.last %></h3>
 			<div id="canvas-wrap"></div>
 	    <script>
 				$(document).ready(function() { 
