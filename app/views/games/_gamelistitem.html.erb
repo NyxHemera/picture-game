@@ -1,4 +1,8 @@
-<div class="game-li-wrap shadows">
+<% if game.finished == true %>
+<div class="game-li-wrap shadows f-game">
+<% else %>
+<div class="game-li-wrap shadows ip-game">
+<% end %>
 		<ul class="photolist">
 			<% game.users.each do |user| %>
 				<li><a href=<%= user_path(user) %>><img class="shadows" src=<%= user.photo_url %> > </a></li>

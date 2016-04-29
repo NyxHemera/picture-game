@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+  display: none;
+}
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -139,6 +142,12 @@ label[for='game_num_rounds'] {
   display: block;
   margin: 10px auto;
   font-size: 4vmin;
+}
+.game-group {
+  margin: 10px auto;
+}
+.game-group .btn {
+  font-size: 2vw;
 }
 .game-li-wrap {
   position: relative;
@@ -418,6 +427,9 @@ label[for='nav-trigger'] span {
   text-decoration: none;
   color: inherit;
 }
+.user-li-wrap + .game-group {
+  margin-top: 0px;
+}
 .wrap {
   position: fixed;
   z-index: 10;
@@ -437,6 +449,9 @@ label[for='nav-trigger'] span {
   body {
     background-repeat: repeat;
     background-attachment: scroll;
+  }
+  .game-group .btn {
+    font-size: 4vw;
   }
   .user-li-wrap {
     width: 95vw;

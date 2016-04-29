@@ -1,7 +1,17 @@
 <div class="index">
   <%= render "userlistitem", :user => @user, :show => true %>
-
+	<div class="btn-group game-group">
+		<button class="btn btn-accent" onclick="showIPG()">In-Progress</button>
+		<button class="btn btn-accent" onclick="showAllG()">All Games</button>
+		<button class="btn btn-accent" onclick="showCG()">Completed</button>
+	</div>
   <% @user.games.each do |game| %>
     <%= render 'games/gamelistitem', :game => game %>
   <% end %>
 </div>
+
+<script type="text/javascript">
+
+	$('.f-game').hide(300);
+
+</script>

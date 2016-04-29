@@ -1,4 +1,9 @@
 <div class="index">
+	<div class="btn-group game-group">
+		<button class="btn btn-accent" onclick="showIPG()">In-Progress</button>
+		<button class="btn btn-accent" onclick="showAllG()">All Games</button>
+		<button class="btn btn-accent" onclick="showCG()">Completed</button>
+	</div>
 	<% @games.each do |game| %>
 		<%= render "gamelistitem", :game => game %>
 	<% end %>
@@ -8,3 +13,9 @@
 		<%= link_to "New Game", new_game_path, class: 'btn-clear btn-submit shadows' %>
 	<% end %>
 </div>
+
+<script type="text/javascript">
+
+	$('.f-game').hide(300);
+
+</script>

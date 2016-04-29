@@ -6,6 +6,11 @@
 @text-primary: #212121;
 @text-secondary: #727272;
 @divider: #b6b6b6;
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
 body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -166,6 +171,13 @@ label[for='game_num_rounds'] {
 		display: block;
 		margin: 10px auto;
 		font-size: 4vmin;
+	}
+}
+
+.game-group {
+	margin: 10px auto;
+	.btn {
+		font-size: 2vw;
 	}
 }
 
@@ -474,6 +486,9 @@ label[for='nav-trigger'] {
 		text-decoration: none;
 		color: inherit;
 	}
+	& + .game-group {
+		margin-top: 0px; 
+	}
 }
 
 .wrap {
@@ -496,6 +511,11 @@ label[for='nav-trigger'] {
 	body {
 		background-repeat: repeat;
 		background-attachment: scroll;
+	}
+	.game-group {
+		.btn {
+			font-size: 4vw;
+		}
 	}
 	.user-li-wrap {
 		width: 95vw;
