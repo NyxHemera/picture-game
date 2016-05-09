@@ -1,4 +1,5 @@
 <%= form_for @game, :html => {class: 'form-fixed'} do |f| %>
     <input name="game[image]" type="hidden" id='game_image' value="Random text goes here." />
+		<h3 class="text-title-game">Draw an image representing the text above.</h3>
 		<input type="submit" name="commit" value="Update Game" onclick="setImageVal()" class="btn btn-accent shadows" />
 <% end %>
