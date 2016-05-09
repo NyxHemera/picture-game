@@ -20,8 +20,8 @@
 			<%= f.text_field :last_name, class: "inp-text inp-text-accent" %>
 		<%= f.label :email, class: "" %>
 			<%= f.text_field :email, class: "inp-text inp-text-accent" %>
-		<%= f.label :photo_url, class: "" %>
-			<%= f.text_field :photo_url, class: "inp-text inp-text-accent" %>
+		<%= f.label :avatar %>
+    	<%= f.file_field :avatar, class: "" %>
 		<%= f.label :password, class: "" %>
 			<%= f.password_field :password, class: "inp-text inp-text-accent" %>
 		<%= f.label :password_confirmation, class: "" %>

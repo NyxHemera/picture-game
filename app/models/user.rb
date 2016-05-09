@@ -1,5 +1,12 @@
 class User < ActiveRecord::Base
 	has_and_belongs_to_many :games
+  has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '400x400#',
+    medium: '300x300>'
+  }
+
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   before_save { email.downcase! }
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423205857) do
+ActiveRecord::Schema.define(version: 20160509173113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,17 +35,21 @@ ActiveRecord::Schema.define(version: 20160423205857) do
   add_index "games_users", ["user_id", "game_id"], name: "index_games_users_on_user_id_and_game_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "login_id",                    null: false
-    t.string   "first_name",                  null: false
-    t.string   "last_name",                   null: false
-    t.string   "photo_url",                   null: false
-    t.string   "email",                       null: false
-    t.integer  "games_created",   default: 0
-    t.integer  "games_completed", default: 0
+    t.string   "login_id",                        null: false
+    t.string   "first_name",                      null: false
+    t.string   "last_name",                       null: false
+    t.string   "photo_url"
+    t.string   "email",                           null: false
+    t.integer  "games_created",       default: 0
+    t.integer  "games_completed",     default: 0
     t.string   "remember_token"
-    t.string   "password_digest",             null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "password_digest",                 null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

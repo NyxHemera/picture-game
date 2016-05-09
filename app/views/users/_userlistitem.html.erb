@@ -1,5 +1,9 @@
 <div class="user-li-wrap shadows">
-	<img class="shadows" src=<%= user.photo_url %>>
+	<% if user.avatar_file_name != nil %>
+		<img class="shadows" src=<%= user.avatar.url(:square) %>>
+	<% else %>
+		<img class="shadows" src=<%= user.photo_url %>>
+	<% end %>
 	<ul>
 		<li><h4><%= user.first_name %> <%= user.last_name %></h4></li>
 		<li><h5>Games Created: <%= user.games_created %></h5></li>

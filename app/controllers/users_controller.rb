@@ -82,6 +82,7 @@ class UsersController < ApplicationController
         :email,
         :photo_url,
         :password,
-        :password_confirmation)
+        :password_confirmation,
+        :avatar)
     end
 end

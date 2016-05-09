@@ -5,7 +5,11 @@
 <% end %>
 		<ul class="photolist">
 			<% game.users.each do |user| %>
-				<li><a href=<%= user_path(user) %>><img class="shadows" src=<%= user.photo_url %> > </a></li>
+					<% if user.avatar_file_name != nil %>
+						<li><a href=<%= user_path(user) %>><img class="shadows" src=<%= user.avatar.url(:square) %> > </a></li>
+					<% else %>
+						<li><a href=<%= user_path(user) %>><img class="shadows" src=<%= user.photo_url %> > </a></li>
+					<% end %>
 			<% end %>
 		</ul>
 		<h5>Next Move: <%= game.text_last ? "Drawing" : "Text" %></h5>
