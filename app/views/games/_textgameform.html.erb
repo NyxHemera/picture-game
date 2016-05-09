@@ -1,6 +1,6 @@
 <%= form_for @game, :html => {class: 'form-fixed'} do |f| %>
     <label class="" for="game_story"></label>
-    <textarea class="inp-text inp-text-accent shadows" type="text" value="" name="game[story]" id="game_story" ></textarea>
+    <textarea class="inp-text inp-text-accent shadows" type="text" value="" name="game[stories]" id="game_story" ></textarea>
 
     <% if @game.stories.length == 0 %>
     	<label class="" for="game_num_rounds">Total Turns: </label>

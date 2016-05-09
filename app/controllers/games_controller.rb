@@ -30,17 +30,17 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     @game.users.push(current_user)
-    @game.stories.push(params[:game][:story])
+    @game.stories.push(params[:game][:stories])
     @game.num_rounds = params[:game][:num_rounds]
     @game.text_last = !@game.text_last
     current_user.games_created += 1;
-    current_user.save
+    current_user.save(validate: false)
     respond_to do |format|
-      if @game.save
+      if @game.save(validate: false)
         format.html { redirect_to games_path, notice: 'Welcome!' }
         #format.json { render :show, status: :created, location: @game }
       else
-        format.html { render :new }
+        format.html { redirect_to new_game_path }
         #format.json { render json: @game.errors, status: :unprocessable_entity }
       end
     end
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
     if @game.text_last
       @game.draw_urls.push(params[:game][:image])
     else
-      @game.stories.push(params[:game][:story])
+      @game.stories.push(params[:game][:stories])
     end
     @game.text_last = !@game.text_last
 
@@ -92,6 +92,7 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(
         :stories,
-        :draw_urls)
+        :draw_urls,
+        :num_rounds)
     end
 end
